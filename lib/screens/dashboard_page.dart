@@ -7,6 +7,7 @@ import '../components/card_info.dart';
 import '../components/bottom_bar.dart';
 import '../components/customer_card.dart';
 import 'package:abdo_omar_app/screens/sections.dart';
+import 'call_logs.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -128,14 +129,29 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  child: const Text('Open route'),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Sections()),
-                    );
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ElevatedButton(
+                      child: const Text('Next Page'),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Sections()),
+                        );
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text('Call Logs'),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CallLogs()),
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
